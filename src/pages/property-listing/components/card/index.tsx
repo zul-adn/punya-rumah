@@ -12,15 +12,16 @@ interface CardProps<T> {
 
 const Card = <T,>({ data }: CardProps<T>) => {
   return (
-    <div className={styles.wrapper}>
+    // <div className={styles.wrapper}>
+    <>
       {data.map((dt, i) => (
         <div
           key={i}
-          className="max-w-sm rounded-md overflow-hidden shadow-md bg-white">
-          <div>
+          className="max-w-sm drop-shadow-md rounded-xl overflow-hidden shadow-md bg-white ">
+          <div className="p-2">
             <img
               key={i}
-              className="w-full h-60 object-cover"
+              className="w-full h-48 object-cover rounded-xl"
               src={dt.images[0]}
               alt="Building"
             />
@@ -49,7 +50,8 @@ const Card = <T,>({ data }: CardProps<T>) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
+    // </div>
   );
 };
 
